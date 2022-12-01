@@ -19,6 +19,6 @@ fun main() {
         .values
         .sortedDescending()
 
-    println("Top elf carries: ${elves.max()}")
+    println("Top elf carries: ${elves.first()}")
     println("Top three elves carry a total of: ${elves.take(3).sum()}")
 }
