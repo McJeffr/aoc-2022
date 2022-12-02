@@ -1,4 +1,4 @@
-package com.mcjeffr.aoc.day1
+package com.mcjeffr.aoc.days
 
 import com.mcjeffr.aoc.common.PuzzleInput
 
