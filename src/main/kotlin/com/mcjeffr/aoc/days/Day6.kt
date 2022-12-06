@@ -10,13 +10,8 @@ fun main() {
 }
 
 fun findStart(input: String, charLength: Int): Int {
-    val deque: ArrayDeque<Char> = ArrayDeque()
+    val deque = ArrayDeque(input.takeAndRemove(charLength).toCharArray().toList())
     input.toCharArray().forEachIndexed { index, char ->
-        if (deque.size != charLength) {
-            deque.addLast(char)
-            return@forEachIndexed
-        }
-
         if (deque.toSet().size == charLength) {
             return index
         } else {
@@ -25,4 +20,10 @@ fun findStart(input: String, charLength: Int): Int {
         }
     }
     return -1
+}
+
+fun String.takeAndRemove(n: Int): String {
+    val taken = this.take(n)
+    this.removeRange(0..n)
+    return taken
 }
