@@ -1,6 +1,7 @@
 package com.mcjeffr.aoc.days
 
 import com.mcjeffr.aoc.common.PuzzleInput
+import com.mcjeffr.aoc.common.Vector2
 import java.lang.IllegalArgumentException
 import java.lang.IllegalStateException
 import kotlin.math.abs
@@ -90,13 +91,6 @@ enum class Direction(private val code: String, val diff: Vector2) {
         fun fromCode(code: String) = values().find { it.code == code }
             ?: throw IllegalArgumentException("Unknown code '$code'")
     }
-}
-
-data class Vector2(val x: Int, val y: Int) {
-    override fun toString(): String = "($x,$y)"
-
-    operator fun plus(other: Vector2) = Vector2(this.x + other.x, this.y + other.y)
-    operator fun minus(other: Vector2) = Vector2(this.x - other.x, this.y - other.y)
 }
 
 // Debug functions
